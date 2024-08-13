@@ -59,7 +59,7 @@ function CodeforceContest() {
         <div className="card">
             <h3 className="card-header text-center" >Codefores Contest List</h3>
             <ul className="list-group">
-                {constestList.map((contest, index) => (
+                {constestList.map((contest) => (
                     <li className="list-group-item">
                         <h5 className="">{contest.name}</h5>
                         <div className="">Before start : {contest.beforeStart}</div>
