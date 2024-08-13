@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Cnn from './components/Cnn'
 import TodoList from './components/TodoList'
@@ -6,7 +5,6 @@ import LeetcodeDaily from './components/LeetcodeDaily'
 import Vnexpess from './components/Vnexpress'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
