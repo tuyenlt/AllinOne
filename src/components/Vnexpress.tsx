@@ -4,10 +4,9 @@ import { useState, useEffect } from "react";
 import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Cnn.css'
-const corsProxy = 'https://cors-anywhere.herokuapp.com/';
-const url = `${corsProxy}https://vnexpress.net/`;
 
-// const url = "https://vnexpress.net"
+
+const url = "https://vnexpress.net/"
 
 
 interface PostData {
