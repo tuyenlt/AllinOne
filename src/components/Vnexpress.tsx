@@ -6,7 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Cnn.css'
 
 
-const url = "https://vnexpress.net/"
+// const url = "https://vnexpress.net/"
+const url = 'https://corsproxy.io/?' + encodeURIComponent('https://https://vnexpress.net');
 
 
 interface PostData {
