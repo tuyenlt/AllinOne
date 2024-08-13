@@ -1,8 +1,8 @@
-.cnn-list {
+.hover-hightlight-list {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.cnn-list:hover {
+.hover-hightlight-list:hover {
     background-color: #f0f0f0; /* Example hover color */
     transform: scale(1.02); /* Slight scaling effect */
 }
@@ -15,6 +15,6 @@
       transform: rotate(360deg);  
     }  
   }  
-.cnn-reload-btn:hover{
+.reload-btn:hover{
     animation: spin 2s infinite;
 }

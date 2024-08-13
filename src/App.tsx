@@ -3,11 +3,18 @@ import Cnn from './components/Cnn'
 import TodoList from './components/TodoList'
 import LeetcodeDaily from './components/LeetcodeDaily'
 import Vnexpess from './components/Vnexpress'
+import CodeforceContest from './components/CodeforceContest'
 
 function App() {
 
   return (
     <>
+      <div className="row">
+        <div className="col">
+        </div>
+        <div className="col"></div>
+      </div>
+      <CodeforceContest></CodeforceContest>
       <Vnexpess></Vnexpess>
       <LeetcodeDaily></LeetcodeDaily>
       <TodoList oldLists={[

@@ -111,7 +111,7 @@ function Cnn() {
                             <button className="btn btn-danger ms-3 " onClick={() => {
                                 fetchPosts()
                             }}>
-                                <FontAwesomeIcon className="cnn-reload-btn" icon={faArrowsRotate} />
+                                <FontAwesomeIcon className="reload-btn" icon={faArrowsRotate} />
                             </button>
                         </div>
                     </nav>
@@ -119,7 +119,7 @@ function Cnn() {
                 <ul className="list-group">
                     {cnnPosts.map((post, index) => (
                         <li
-                            className="list-group-item cnn-list"
+                            className="list-group-item hover-hightlight-list"
                             role="button"
                             key={index}
                             onClick={() => handleClick(post.link)}

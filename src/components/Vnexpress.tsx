@@ -5,10 +5,8 @@ import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Cnn.css'
 
-
-// const url = "https://vnexpress.net/"
-const url = 'https://corsproxy.io/?' + encodeURIComponent('https://https://vnexpress.net');
-
+const corsUrl = "https://proxy.cors.sh/"
+const url = "https://vnexpress.net/"
 
 interface PostData {
     link: string | undefined;
@@ -37,14 +35,18 @@ const postCategories: PC = {
 async function getVnexpessPosts(postCategory = postCategories["Bất động sản"], postLimit = 20): Promise<PostData[]> {
     let VnexpessPosts: PostData[] = [];
     try {
-        const response = await axios.get(url + postCategory);
+        const response = await axios.get(corsUrl + url + postCategory, {
+            headers: {
+                'x-cors-api-key': 'temp_eee25594c24c213d5c989a1a7681fb80'
+            }
+        });
         const $ = cheerio.load(response.data);
         let postEles = $('h3.title-news').toArray();
         let countPostLimit = 0;
 
         for (const ele of postEles) {
             let eleData: PostData = {
-                "link": url + $(ele).find('a').attr('href'),
+                "link": $(ele).find('a').attr('href'),
                 "name": $(ele).find('a').text(),
             };
             if (eleData.name == "") continue;
@@ -93,9 +95,9 @@ function Vnexpess() {
                         <div className="container-fluid d-flex align-items-center justify-content-center">
                             <div>
                                 <img
-                                    src="./src/assets/images/Vnexpess.webp"
+                                    src="./public/Vnexpress.png"
                                     alt=""
-                                    style={{ maxWidth: '50px', borderRadius: '10px', margin: '0 20px 0 20px' }}
+                                    style={{ width: '50px', borderRadius: '2px', margin: '0 20px 0 20px' }}
                                 />
                             </div>
                             <div className="input-group mb-3" style={{ maxWidth: '70%', margin: '15px 0 0 0' }}>
@@ -112,7 +114,7 @@ function Vnexpess() {
                             <button className="btn btn-danger ms-3 " onClick={() => {
                                 fetchPosts()
                             }}>
-                                <FontAwesomeIcon className="Vnexpess-reload-btn" icon={faArrowsRotate} />
+                                <FontAwesomeIcon className="reload-btn" icon={faArrowsRotate} />
                             </button>
                         </div>
                     </nav>
@@ -120,7 +122,7 @@ function Vnexpess() {
                 <ul className="list-group">
                     {VnexpessPosts.map((post, index) => (
                         <li
-                            className="list-group-item Vnexpess-list"
+                            className="list-group-item hover-hightlight-list"
                             role="button"
                             key={index}
                             onClick={() => handleClick(post.link)}
