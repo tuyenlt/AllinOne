@@ -1,7 +1,5 @@
 import React, { useState } from "react"
 import './TodoList.css'
-import { faX } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface todoType {
     text: string
@@ -37,9 +35,10 @@ function TodoList({ oldLists }: Props) {
         event.stopPropagation()
         let removeIndex = Number(event.currentTarget.getAttribute('data-key'))
         setTodoLists(prevTodoLists =>
-            prevTodoLists.filter((todo, index) =>
-                index != removeIndex
-
+            prevTodoLists.filter((todo, index) => {
+                todo.done = todo.done
+                return index != removeIndex
+            }
             )
         );
         console.log(todoLists)
