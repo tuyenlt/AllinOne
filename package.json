@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --port 8000"
+  },
+  "engines": {
+    "node": "22.5.1"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
