@@ -1,5 +1,4 @@
 import DailyNews from "./DailyNews/DailyNews";
-import Login from "./Login/Login";
 
 export default [
 
