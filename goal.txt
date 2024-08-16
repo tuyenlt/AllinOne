@@ -1,7 +1,0 @@
-cnn news --
-todolist --
-codeforces --
-leetcodeDaily --
-messenger
-youtube
-facebook pages

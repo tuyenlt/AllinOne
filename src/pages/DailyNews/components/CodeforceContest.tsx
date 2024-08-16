@@ -2,7 +2,7 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react";
 
-const API_URL = "https://codeforces.com/api/contest.list?gym=false"
+const CODEFORCEAPI_URL = "https://codeforces.com/api/contest.list?gym=false"
 const regesterUrl = "https://codeforces.com/contestRegistration/"
 
 function convertSecondsToDate(seconds: number): string {
@@ -26,7 +26,7 @@ interface ContestInterface {
 
 async function getCodeforceContest() {
     let contestList: ContestInterface[] = [];
-    const response = await axios.get(API_URL)
+    const response = await axios.get(CODEFORCEAPI_URL)
     console.log(response.data.result)
     for (let constest of response.data.result) {
         if (constest.phase == "FINISHED") break;

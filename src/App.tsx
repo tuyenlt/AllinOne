@@ -1,29 +1,37 @@
-import './App.css'
-import Cnn from './components/Cnn'
-import TodoList from './components/TodoList'
-import LeetcodeDaily from './components/LeetcodeDaily'
-import Vnexpess from './components/Vnexpress'
-import CodeforceContest from './components/CodeforceContest'
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import routes from "./pages/routes";
+import { ProtectedRoute } from "./pages/ProtectedRoute";
+import { AuthProvider } from "./hooks/useAuth";
+import Login from "./pages/Login/Login";
+import Regester from "./pages/Regester/Regester.";
+import HomeNavbar from "./home/HomeNavbar";
 
 function App() {
-
-  return (
-    <>
-      <div className="row">
-        <div className="col">
-        </div>
-        <div className="col"></div>
-      </div>
-      <CodeforceContest></CodeforceContest>
-      <Vnexpess></Vnexpess>
-      <LeetcodeDaily></LeetcodeDaily>
-      <TodoList oldLists={[
-        { text: "done this shit", done: true },
-        { text: "done that shit", done: false },
-        { text: "done the other shit", done: false }]}></TodoList>
-      <Cnn></Cnn>
-    </>
-  )
+  return (<>
+    <BrowserRouter>
+      <AuthProvider>
+        <ProtectedRoute>
+          <HomeNavbar></HomeNavbar>
+        </ProtectedRoute>
+        <Routes>
+          <Route path="/login" element={< Login />} />
+          <Route path="/regester" element={< Regester />} />
+          {routes.map(({ component: Component, path }, index) => (
+            <Route
+              key={index}
+              path={path}
+              element={
+                <ProtectedRoute>
+                  <Component />
+                </ProtectedRoute>
+              }
+            />
+          ))}
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
+  </>
+  );
 }
 
-export default App
+export default App;

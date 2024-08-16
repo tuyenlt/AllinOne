@@ -30,19 +30,16 @@ function LeetcodeDaily() {
     useEffect(() => {
         fetchQuestion()
     }, []);
-    return <div className="container">
+    return <div className="card">
+        <h4 className="card-header">Leetcode Daily Question</h4>
+        <div className="card-body">
 
-        <div className="card">
-            <h4 className="card-header">Leetcode Daily Question</h4>
-            <div className="card-body">
-
-                <a href={questionData.link} target="#">
-                    <h4>{questionData.title}</h4>
-                </a>
-                <div
-                    dangerouslySetInnerHTML={{ __html: questionData.htmlString }}
-                />
-            </div>
+            <a href={questionData.link} target="#">
+                <h4>{questionData.title}</h4>
+            </a>
+            <div
+                dangerouslySetInnerHTML={{ __html: questionData.htmlString }}
+            />
         </div>
     </div>
 }

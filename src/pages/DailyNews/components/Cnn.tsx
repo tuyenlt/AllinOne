@@ -85,50 +85,48 @@ function Cnn() {
     };
 
     return (
-        <div className="container">
-            <div className="card">
-                <div className="text-center">
-                    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-                        <div className="container-fluid d-flex align-items-center justify-content-center">
-                            <div>
-                                <img
-                                    src="./src/assets/images/CNN.webp"
-                                    alt=""
-                                    style={{ maxWidth: '50px', borderRadius: '10px', margin: '0 20px 0 20px' }}
-                                />
-                            </div>
-                            <div className="input-group mb-3" style={{ maxWidth: '70%', margin: '15px 0 0 0' }}>
-                                <label className="input-group-text"
-                                    htmlFor="inputGroupSelect01">Choose Category</label>
-                                <select className="form-select" id="inputGroupSelect01" onChange={handleSelectChange}>
-                                    {
-                                        Object.keys(postCategories).map((category: string) => (
-                                            <option key={category} value={category}>{category}</option>
-                                        ))
-                                    }
-                                </select>
-                            </div>
-                            <button className="btn btn-danger ms-3 " onClick={() => {
-                                fetchPosts()
-                            }}>
-                                <FontAwesomeIcon className="reload-btn" icon={faArrowsRotate} />
-                            </button>
+        <div className="card">
+            <div className="text-center">
+                <nav className="navbar navbar-expand-lg bg-body-tertiary">
+                    <div className="container-fluid d-flex align-items-center justify-content-center">
+                        <div>
+                            <img
+                                src="./src/assets/images/CNN.webp"
+                                alt=""
+                                style={{ maxWidth: '50px', borderRadius: '10px', margin: '0 20px 0 20px' }}
+                            />
                         </div>
-                    </nav>
-                </div>
-                <ul className="list-group">
-                    {cnnPosts.map((post, index) => (
-                        <li
-                            className="list-group-item hover-hightlight-list"
-                            role="button"
-                            key={index}
-                            onClick={() => handleClick(post.link)}
-                        >
-                            <strong>{post.name}</strong>
-                        </li>
-                    ))}
-                </ul >
+                        <div className="input-group mb-3" style={{ maxWidth: '70%', margin: '15px 0 0 0' }}>
+                            <label className="input-group-text"
+                                htmlFor="inputGroupSelect01">Choose Category</label>
+                            <select className="form-select" id="inputGroupSelect01" onChange={handleSelectChange}>
+                                {
+                                    Object.keys(postCategories).map((category: string) => (
+                                        <option key={category} value={category}>{category}</option>
+                                    ))
+                                }
+                            </select>
+                        </div>
+                        <button className="btn btn-danger ms-3 " onClick={() => {
+                            fetchPosts()
+                        }}>
+                            <FontAwesomeIcon className="reload-btn" icon={faArrowsRotate} />
+                        </button>
+                    </div>
+                </nav>
             </div>
+            <ul className="list-group">
+                {cnnPosts.map((post, index) => (
+                    <li
+                        className="list-group-item hover-hightlight-list"
+                        role="button"
+                        key={index}
+                        onClick={() => handleClick(post.link)}
+                    >
+                        <strong>{post.name}</strong>
+                    </li>
+                ))}
+            </ul >
         </div>
     );
 }
