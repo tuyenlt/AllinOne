@@ -9,6 +9,7 @@ interface Post {
     postOwnerName: string;
     avatarSrc: string
     title: string;
+    type: "post" | "comment"
     content: {
         text: string;
         imgPath: string | undefined;
@@ -29,6 +30,7 @@ const examplePosts: Post[] = [
         postOwnerName: "Lê Trọng Tuyên",
         avatarSrc: "vite.svg",
         title: 'First Post',
+        type: "post",
         content: {
             text: 'This is the content of the first post.',
             imgPath: undefined
