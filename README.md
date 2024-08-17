@@ -21,7 +21,7 @@ interface Post {
     }
     comment: Post | any | undefined
 }
-```ts
+```
 
 # user 
 
@@ -37,4 +37,4 @@ class Users(BaseModel):
     postsList : List[str]
     todoList : List[TodoModel]
 
-```python
+```
