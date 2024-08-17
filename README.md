@@ -1,4 +1,4 @@
-### posts type
+# posts type
 
 
 
@@ -23,6 +23,8 @@ interface Post {
 }
 ```ts
 
+# user 
+
 ```python
 class Users(BaseModel):
     id : str
@@ -34,3 +36,5 @@ class Users(BaseModel):
     friendsLists : List[str]
     postsList : List[str]
     todoList : List[TodoModel]
+
+```python
