@@ -2,6 +2,10 @@
 
 
 
+post api
+
+
+
 ```ts
 interface Post {
     id: number;

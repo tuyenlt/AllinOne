@@ -10,7 +10,7 @@ const Login: React.FC = () => {
     const { login } = useAuth();
     const onFinish = async (values: any) => {
         console.log('Received values of form: ', values);
-        let response = await axios.post("http://127.0.0.1:8000/loginAuth", {
+        let response = await axios.post("https://allinoneapi.onrender.com/loginAuth", {
             "email": values.email,
             "password": values.password,
         })

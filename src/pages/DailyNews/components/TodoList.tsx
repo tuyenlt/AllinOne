@@ -23,7 +23,7 @@ function TodoList() {
             console.log(updatedUser)
             localStorage.setItem('user', JSON.stringify(updatedUser))
             setTimeout(async (user: any) => {
-                let response = await axios.post("http://127.0.0.1:8000/insertUserList", {
+                let response = await axios.post("https://allinoneapi.onrender.com/insertUserList", {
                     "id": user.id,
                     "listName": "todoList",
                     "value": user.todoList
@@ -36,7 +36,7 @@ function TodoList() {
         if (todoLists.length > 0)
             updateDataToDatabase()
     }, [todoLists])
-    
+
     useEffect(() => {
         const user = localStorage.getItem('user')
         if (user) {

@@ -42,7 +42,7 @@ const Regester: React.FC = () => {
 
     const onFinish = async (values: any) => {
         console.log('Received values of form: ', values);
-        let response = await axios.post("http://127.0.0.1:8000/userRegester", {
+        let response = await axios.post("https://allinoneapi.onrender.com/userRegester", {
             "email": values.email,
             "displayName": values.username,
             "password": values.password,
