@@ -1,11 +1,5 @@
 # posts type
 
-
-
-post api
-
-
-
 ```ts
 interface Post {
     id: number;
@@ -42,3 +36,60 @@ class Users(BaseModel):
     todoList : List[TodoModel]
 
 ```
+
+# Api
+## endpoint : https://allinoneapi.onrender.com
+
+## login auth: /loginAuth
+method: post
+request body:
+``` python
+    email : str
+    password : str
+```
+response data (object):
+``` python
+    id : str
+    email : str 
+    password : str
+    displayName : str 
+    description : str
+    avatar: str ## img path
+    friendsLists : List[str]
+    postsList : List[str]
+    todoList : List[TodoModel]
+```
+
+## regester: /userRegester
+method: post
+request body:
+``` python
+    email : str
+    password : str
+    displayName : str
+```
+
+## create post : /create-post
+method: post
+request body:
+``` python
+    id: str
+    postOwnerId: str
+    postOwnerName: str
+    avatarSrc: str
+    title: str
+    type: Literal["post", "comment"]
+    content: Content
+    react: React
+    comment: List[str]
+```
+
+
+## get post : /get-post
+method: get
+request body:
+``` python
+    id : str
+```
+
+
